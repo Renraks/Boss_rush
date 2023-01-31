@@ -1,0 +1,81 @@
+1 - Player
+	1.1 - Criando o placeholder do player - FEITO
+	1.2 - Criando o objeto do player - FEITO
+	1.3 - Fazendo o player se mover com o WASD - FEITO
+		1.3.1 - Criando o método de movimento - FEITO
+	1.4 - Impedindo o player de sair da tela - FEITO
+	1.5 - Criando o tiro do player
+		1.5.1 - Criando o placeholder do tiro - FEITO
+		1.5.2 - Criando o objeto do tiro - FEITO
+		1.5.3 - Criando o tiro ao clicar com o botão X - FEITO
+		1.5.4 - Criando método de atirar - FEITO 
+		1.5.5 - Criando o tiro com o mouse - FEITO
+		1.5.6 - Colocando a direção do tiro para ser a direção do mouse - FEITO
+	1.6 - Criando o dash do player
+		1.6.1 - Criando as variaveis - FEITO
+		1.6.2 - Fazendo o player utilziar o dash com o botão direito do mouse - FEITO
+		1.6.2 - Implementando o dash - FEITO
+		1.6.3 - Criando o método do dash - FEITO
+	1.7 - Fazendo o player perder vida
+		1.7.1 - Detectando a colisão com o boss - FEITO
+		1.7.2 - Criando o estado de ivulnerabilidade - FEITO
+		1.7.3 - Perdendo vida - FEITO
+		1.7.4 - Reiniciando o game ao acabarem as vidas - FEITO
+	1.8 - Substituindo o tiro por um ataque melee
+		1.8.1 - Manter código do tiro para usar em futuros updates
+		1.8.2 - Criando sprite simples do golpe
+		1.8.3 - Criando variaveis pai para todos os golpes
+		1.8.4 - Criando colisão com chefes e terreno
+		1.8.5 - Causando dano
+	
+
+2 - Mapa1
+	2.1 - Ajustando o tamanho do mapa - FEITO
+	2.2 - Ajustando a viewport - FEITO
+	2.3 - Criando as paredes da fase
+		2.3.1 - Fazendo o placeholder da parede - FEITO
+		2.3.2 - Criando o objeto e tornando ele solido - FEITO
+		2.3.3 - Criando a layer das paredes - FEITO
+		2.3.4 - Alocando as paredes na room - FEITO
+		
+	
+3 - Boss
+	3.1 - Criando o placeholder do boss - FEITO
+	3.2 - Criando o objeto do boss - FEITO
+	3.3 - Fazendo o boss seguir o player
+		3.3.1 - Fazendo ele andar aleatoriamente a cada X tempo - FEITO
+		3.3.2 - Fazendo o boss alterar de direção de tempos em tempos - FEITO
+		3.3.3 - Impedindo o boss de sair da room - FEITO
+	3.4 - Fazendo ele dar um avanço na direção atual do player ao parar
+		3.4.1 - Criando uma explosão ao bater na parede com o avanço - FEITO
+		3.4.2 - Criando a animação e fazendo ela sumir depois de um tempo - FEITO
+	3.5 - Criando o estado enfraquecido
+		3.5.1 - Criando o estado enfraquecido ao bater na parede - FEITO
+		3.5.2 - Recebendo dano pelos tiros - FEITO
+		3.5.3 - Sendo destruido ao ficar sem vida - FEITO
+		3.5.4 - Criado efeito de enfraquecido
+	3.6 - O boss quebra a parede interna da fase ao colidir
+	
+4 - HUD
+	4.1 - Criando sala de inicio
+		4.1.1 - Texto controlavel
+			4.1.1.1 - O player consegue mexer entre os textos do menu
+			4.1.1.2 - O player pode escolher uma das ações do menu
+		4.1.2 - Textos extras
+			4.1.3 - Criada função para textos extras
+	4.2 - Tela de fim
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
