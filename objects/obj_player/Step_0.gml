@@ -16,5 +16,7 @@ danificado();
 
 if(vida <= 0)
 {
-	game_restart();	
+	global.abates_consecutivos = 0
+	scr_salva_contagem_abates()
+	game_restart();
 }

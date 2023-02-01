@@ -1,5 +1,19 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Primeiro objeto do jogo
+
+//Instanciando as variaveis globais
+global.abates = 0 //Total de abates
+global.abates_consecutivos = 0 //Total de abates
+
+//Recuperando dados salvos
+ini_open("savedata.ini")
+//Recupera número de abates totais do jogador
+global.abates = ini_read_real("Abates", "abates", 0)
+global.total_abates = "Abates totais: " + string(global.abates)
+global.abates_consecutivos =  ini_read_real("Abates", "abates_consecutivos", 0)
+global.total_abates_consecutivos = "Abates consecutivos: " + string(global.abates_consecutivos) //String com o total de abates
+ini_close()
+
+//Variaveis de testo
 texto_titulo = "Boss Rush"
 textos_menu = ["Começar", "Sair"]
 yoffset_menu = [100, 50]

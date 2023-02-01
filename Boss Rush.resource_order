@@ -45,6 +45,7 @@
     {"name":"obj_ui_fim","order":1,"path":"objects/obj_ui_fim/obj_ui_fim.yy",},
     {"name":"Fim","order":1,"path":"rooms/Fim/Fim.yy",},
     {"name":"snd_Gun_shoot","order":4,"path":"sounds/snd_Gun_shoot/snd_Gun_shoot.yy",},
+    {"name":"Feedback","order":1,"path":"notes/Feedback/Feedback.yy",},
     {"name":"obj_parede_interna","order":1,"path":"objects/obj_parede_interna/obj_parede_interna.yy",},
     {"name":"snd_Slap","order":1,"path":"sounds/snd_Slap/snd_Slap.yy",},
     {"name":"f_titulo","order":1,"path":"fonts/f_titulo/f_titulo.yy",},

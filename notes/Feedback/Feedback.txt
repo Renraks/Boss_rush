@@ -1,0 +1,15 @@
+Gabriel
+>Espaço e Enter para iniciar e reiniviar o jogo
+>Pause, botão a definir
+>Auto-pause ao sair da tela do jogo
+>Recompensar gameplay agressiva
+>Upgrade dependendo da quantidade de vidas que terminou ao derrotar o Boss
+>Loop do mesmo boss com menos cooldown, mais vida e novos ataques
+>Contador de kills (Criado!)
+
+
+Próprio
+>Ataque carregado parado para o Boss quadrado
+---->Enquanto carrega se o player bater nele o suficiente para o ataque e o enfraquece
+---->Se não, ENORME explosão que limpa as parede e da muito dano, é desviavel se for longe o suficiente
+>Save.file (Criado!)

@@ -14,6 +14,9 @@ draw_set_color(c_black)
 draw_text(xx, yy - yoffset_menu[0], textos_menu[0])
 draw_text(xx, yy - yoffset_menu[1], textos_menu[1])
 
+draw_text(50, 50, global.total_abates)
+draw_text(50, 100, global.total_abates_consecutivos)
+
 draw_sprite_ext(spr_cursor_ui_menu, 0, xx - 32, yy - (yoffset_menu[posicao_cursor] - 5), 1, 1, 0, c_white, 1)
 
 

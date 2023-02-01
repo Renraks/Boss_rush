@@ -123,6 +123,9 @@ function recebe_dano(ataque_recebido)
 	if(vida <= 0) 
 	{
 		instance_destroy();
+		global.abates += 1; //Adiciona 1 a contagem de abates
+		global.abates_consecutivos += 1;
+		scr_salva_contagem_abates()
 		room_goto_next()
 	}
 }
