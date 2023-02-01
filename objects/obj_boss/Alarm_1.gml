@@ -23,6 +23,7 @@ else
 		//Ataque corpo a corpo
 		buildup = false
 		ataque = true
+		audio_play_sound(snd_Slap, 1, false)
 	}
 	else
 	{

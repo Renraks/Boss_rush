@@ -39,6 +39,7 @@ function ataca()
 		instance_create_layer(x, y, "Ataque", obj_ataque_1)
 		alarm[1] = room_speed/2
 		cd_ataque = true;
+		audio_play_sound(snd_Punch, 1, false)
 	}
 }
 // -------- Atirando ----------//
@@ -50,6 +51,7 @@ function atira()
 		instance_create_layer(x, y, "Tiros", obj_tiro1_player);
 		alarm[2] = cooldown_tiro;
 		cd_tiro = true;
+		audio_play_sound(snd_Gun_shoot, 1, false)
 	}
 }
 
@@ -62,6 +64,7 @@ function corrida()
 		velocidade *= 6;
 		alarm[0] = room_speed/6;
 		cd_dash = true;
+		audio_play_sound(snd_Slide, 1, false)
 	}	
 }
 

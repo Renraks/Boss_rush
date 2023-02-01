@@ -16,26 +16,24 @@ textos_tutorial =
 textos_fdb = 
 [
 "Este jogo ainda está em desenvolvimento",
-"Se tiver algum feedback, pode me mandar no discord/zap",
+"Se tiver algum feedback, pode me mandar no discord/zap/telegram",
 "Se não tiver nenhum desses, me envie um e-mail",
 "renraksGAMING@hotmail.com"
 ]
 textos_tbd = 
 [
 "LISTA DE COISAS QUE PRETENDO FAZER",
-"Mudar posição das paredes da fase",
-"Ajustar dificuldade, de acordo com feedback",
-"Adicionar sons simples"
+"Criar fases semi-randomicas",
+"Iniciar desenvolvimento do novo Chefe"
 ]
 
 textos_att = 
 [
 "ATUALIZAÇÕES",
-"Novo ataque e movimentação para o Boss",
-"Mais dificil conforme menos vida o Boss tem",
-"Adicionado aviso nos ataque do Boss",
-"Criada UI de vida do player e do Boss",
-"Criado UI do cooldown do Dash e Tiro"
+"Adicionado sons ao jogo",
+"Melhorado UI do player",
+"Alterado o posicionamento das paredes",
+"Corrigido bug com a barra de vida do Boss"
 ]
 
 function controle()
@@ -102,3 +100,5 @@ function escreve_array(array, rw, rh, xn = 1, yn = 1)
 }
 
 
+//Let's GOOOOOOOOOOOOOO
+audio_play_sound(snd_Let_s_gooooooooo, 1, false)

@@ -66,7 +66,14 @@
 	4.2 - Tela de fim
 	
 	
-	
+5 - Sons
+	5.1 - Criado sons
+	5.2 - Adicionado sons
+		5.2.1 - Adicionado som de soco pro player
+		5.2.2 - Adicionado som de tiro pro player
+		5.2.3 - Adicionado som de dash pro player
+		5.2.4 - Adicionado som de boom pro boss
+		5.2.5 - Adicionado som de tapa pro boss
 	
 	
 	

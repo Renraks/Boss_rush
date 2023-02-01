@@ -15,6 +15,6 @@ function reiniciar()
 	}
 }
 
-
+audio_play_sound(snd_Sheeesh, 1, false)
 
 

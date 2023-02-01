@@ -77,6 +77,7 @@ function avancando()
 			speed = 0; // Diminui a velocidade conforme se aproxima do objeto
 			if(speed == 0) instance_create_layer(x, y, "Efeitos", obj_explosao_chefe);//Cria a explosão ao bater na parede
 			estado_atual = "ENFRAQUECIDO";
+			if !audio_is_playing(snd_Vine_Boom) audio_play_sound(snd_Vine_Boom, 1, false)
 		}
 		if(para_avanco <= 0)
 		{
