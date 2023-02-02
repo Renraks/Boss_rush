@@ -21,9 +21,15 @@ if buildup
 	var bxx = x + irandom_range(-32, 32)
 	var byy = y + irandom_range(-32, 32)
 	instance_create_layer(bxx, byy, "Boss", obj_boss_buildup)
-	if !instance_exists(obj_boss_aviso_ataque)
+	//Na explosao, cria muito mais fumaça
+	if comeca_explosao
 	{
-		
+		repeat 5 
+		{	
+			bxx = x + irandom_range(-32, 32)
+			byy = y + irandom_range(-32, 32)
+			instance_create_layer(bxx, byy, "Boss", obj_boss_buildup)
+		}
 	}
 }
 if cria_aviso_ataque
@@ -41,6 +47,12 @@ if cria_aviso_dash
 	aviso.image_angle = point_direction(x, y, obj_player.x, obj_player.y)
 	aviso.image_yscale = 48
 	aviso.image_xscale = 400
+}
+if cria_aviso_explosao
+{
+	cria_aviso_explosao = false
+	var _aviso = instance_create_layer(x, y, "Efeitos", obj_boss_aviso_explosao)
+	_aviso.vida = room_speed * 5
 }
 
 //Barras de vida

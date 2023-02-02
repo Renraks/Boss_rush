@@ -16,6 +16,10 @@ avancando();
 
 atacando();
 
+// --------------- Explode ----------------- //
+
+explode();
+
 // --------------- Recebendo Dano ---------- //
 
 //Verifica ataques meelee

@@ -8,9 +8,10 @@ function scr_salva_contagem_abates(){
 	var _abates = global.abates
 	ini_write_real("Abates", "abates", _abates) //Escreve o save de inventario
 	
-	//Abates consecutivos
+	//Abates consecutivos E dificuldade
 	var _abates_consecutivos = global.abates_consecutivos
 	ini_write_real("Abates", "abates_consecutivos", _abates_consecutivos)
+	
 	
 	ini_close()
 	//Fecha o arquivo de save

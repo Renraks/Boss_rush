@@ -1,19 +1,9 @@
 /// @description Primeiro objeto do jogo
 
-//Instanciando as variaveis globais
-global.abates = 0 //Total de abates
-global.abates_consecutivos = 0 //Total de abates
-
-//Recuperando dados salvos
-ini_open("savedata.ini")
-//Recupera número de abates totais do jogador
-global.abates = ini_read_real("Abates", "abates", 0)
-global.total_abates = "Abates totais: " + string(global.abates)
-global.abates_consecutivos =  ini_read_real("Abates", "abates_consecutivos", 0)
-global.total_abates_consecutivos = "Abates consecutivos: " + string(global.abates_consecutivos) //String com o total de abates
-ini_close()
-
-//Variaveis de testo
+//Variaveis de texto
+texto_total_abates = "Abates totais: " + string(global.abates)
+texto_total_abates_consecutivos = "Abates consecutivos: " + string(global.abates_consecutivos)
+texto_dificuldade_atual = "Dificuldade: " + string(global.dificuldade)
 texto_titulo = "Boss Rush"
 textos_menu = ["Começar", "Sair"]
 yoffset_menu = [100, 50]
@@ -25,7 +15,7 @@ textos_tutorial =
 "Ataque de perto com o botão esquerdo do mouse",
 "Atire com o botão direito do mouse",
 "Se esquive com a barra de espaço",
-"Para escolher as opções do menu use o Enter"
+"Para escolher as opções do menu use o Enter ou Espaço"
 ]
 textos_fdb = 
 [
@@ -44,10 +34,8 @@ textos_tbd =
 textos_att = 
 [
 "ATUALIZAÇÕES",
-"Adicionado sons ao jogo",
-"Melhorado UI do player",
-"Alterado o posicionamento das paredes",
-"Corrigido bug com a barra de vida do Boss"
+"Adicionado ESPAÇO como opção além do ENTER",
+"Adicionado sistema de dificuldade",
 ]
 
 function controle()
@@ -77,9 +65,9 @@ function controle()
 
 function seleciona()
 {
-	var seleciona
-	seleciona = keyboard_check_pressed(vk_enter)
-	if seleciona
+	var _seleciona
+	_seleciona = keyboard_check_pressed(vk_enter) + keyboard_check_pressed(vk_space)
+	if _seleciona
 	{
 		switch(posicao_cursor)
 		{
@@ -94,25 +82,6 @@ function seleciona()
 	}
 	
 }
-
-function escreve_array(array, rw, rh, xn = 1, yn = 1)
-{
-	var xx, yy
-	xx = room_width/rw * xn
-	yy = room_height/rh * yn
-	draw_set_font(f_titulo)
-	draw_set_alpha(1)
-	for (var i = 0; i < array_length(array); i ++)
-	{
-		if i = 0 draw_set_font(f_titulo)
-		else draw_set_font(f_texto)
-		draw_text(xx, yy + (30 * i - 1), array[i])
-	}
-	
-	draw_set_font(-1)
-	draw_set_alpha(1)
-}
-
 
 //Let's GOOOOOOOOOOOOOO
 audio_play_sound(snd_Let_s_gooooooooo, 1, false)

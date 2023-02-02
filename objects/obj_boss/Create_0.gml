@@ -13,12 +13,19 @@ chance_de_perseguir = 3 //Quanto maior, menos provavel o boss perseguir o player
 //verifica avanço
 dando_avanco = false; //Variavel que confirma ter iniciado o avanço
 buildup = false //Variavel de buildup do avanço
+cria_aviso_dash = false
+comeca_dash = false
 
 //Verifica ataque
 ataque = false
 tempo_parado = 2 //Tempo em segundos que fica parado
 cria_aviso_ataque = false
-cria_aviso_dash = false
+comeca_ataque = false
+
+//Explosao
+cria_aviso_explosao = false
+explodiu = false //Variavel que verifica se o chefe explodiu ou não
+comeca_explosao = false
 
 posicao_player = 0
 
@@ -28,8 +35,10 @@ dificuldades = ["FACIL", "DIFICIL", "O_FIM"]
 dificuldade_atual = dificuldades[0]
 
 //Vida
-vida_max = 300; //Vida maxima do chefe
-vida = 300; //Vida atual do chefe
+vida_base = 150
+vida_escala = 50
+vida_max = vida_base + (global.dificuldade * vida_escala); //Vida maxima do chefe
+vida = 1;    //Vida atual do chefe
 
 //Lerps
 opacidade_enfraquecido = 1
@@ -98,7 +107,7 @@ function atacando()
 		var o_ataque = instance_create_layer(x, y, "Boss", obj_boss_ataque_cc) //Cria o ataque
 		o_ataque.direction = posicao_ataque //Aponta ele para o player
 		speed = 0 //Fica parado
-		alarm[0] = room_speed * 2 //Começa o cooldown pra andar
+		alarm[0] = room_speed * tempo_parado //Começa o cooldown pra andar
 	}
 }
 // Recebendo dano
@@ -125,8 +134,26 @@ function recebe_dano(ataque_recebido)
 		instance_destroy();
 		global.abates += 1; //Adiciona 1 a contagem de abates
 		global.abates_consecutivos += 1;
+		global.experiencia += 7 * global.dificuldade
 		scr_salva_contagem_abates()
+		scr_salva_infos_player()
 		room_goto_next()
+	}
+}
+
+function explode()
+{
+	if explodiu
+	{
+		explodiu = false
+		
+		var _explosao = instance_create_layer(x, y, "Boss", obj_explosao_chefe)
+		_explosao.image_xscale = 10
+		_explosao.image_yscale = 10
+		_explosao.dano = 4
+		
+		alarm[0] = room_speed * (tempo_parado * 2) //Volta a andar
+		if !audio_is_playing(snd_Vine_Boom) audio_play_sound(snd_Vine_Boom, 1, false)
 	}
 }
 

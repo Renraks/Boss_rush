@@ -36,7 +36,8 @@ function ataca()
 	var ataca = mouse_button = mb_left
 	if (ataca && !cd_ataque)
 	{
-		instance_create_layer(x, y, "Ataque", obj_ataque_1)
+		var _ataque = instance_create_layer(x, y, "Ataque", obj_ataque_1)
+		_ataque.dano = global.dano_ataque_corpo_a_corpo
 		alarm[1] = room_speed/2
 		cd_ataque = true;
 		audio_play_sound(snd_Punch, 1, false)
@@ -48,7 +49,8 @@ function atira()
 	var ativar_tiro = mouse_button = mb_right;
 	if(ativar_tiro && !cd_tiro) 
 	{
-		instance_create_layer(x, y, "Tiros", obj_tiro1_player);
+		var _tiro = instance_create_layer(x, y, "Tiros", obj_tiro1_player);
+		_tiro.dano = global.dano_ataque_a_distancia
 		alarm[2] = cooldown_tiro;
 		cd_tiro = true;
 		audio_play_sound(snd_Gun_shoot, 1, false)
@@ -77,14 +79,21 @@ function danificado()
 	{
 		if !chefe.dando_avanco vida--;
 		else vida -= 2
-		tempo_ivulneravel = room_speed * 5;
+		tempo_ivulneravel = room_speed * 3;
 		ivulneravel = true;
 	}
 	//Se receber um ataque do chefe, toma mais dano ainda
 	if place_meeting(x, y, obj_boss_ataque_cc) and !ivulneravel
 	{
 		vida-= 2
-		tempo_ivulneravel = room_speed * 5
+		tempo_ivulneravel = room_speed * 3
+		ivulneravel = true
+	}
+	var _explosao = instance_place(x, y, obj_explosao_chefe)
+	if _explosao and !ivulneravel
+	{
+		vida -= _explosao.dano
+		tempo_ivulneravel = room_speed * 3
 		ivulneravel = true
 	}
 	if tempo_ivulneravel > 0 tempo_ivulneravel--;

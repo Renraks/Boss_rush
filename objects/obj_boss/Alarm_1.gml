@@ -9,21 +9,28 @@ if(anda)
 }
 else
 {
-	var p_distancia = distance_to_object(obj_player)
-	if p_distancia < 800 and p_distancia > 300
+	if comeca_dash
 	{
+		comeca_dash = false
 		buildup = false; //Desliga o buildup
 		dando_avanco = true; //Inicia o avanço
 		direction = posicao_player; //Trava a direção com a do player naquele momento
 		speed = velocidade_dash
 		para_avanco = room_speed; //Começa a parar o avanço
 	}
-	else if p_distancia < 300
+	else if comeca_ataque
 	{
 		//Ataque corpo a corpo
+		comeca_ataque = false
 		buildup = false
 		ataque = true
 		audio_play_sound(snd_Slap, 1, false)
+	}
+	else if comeca_explosao
+	{
+		buildup = false
+		comeca_explosao = false
+		explodiu = true
 	}
 	else
 	{

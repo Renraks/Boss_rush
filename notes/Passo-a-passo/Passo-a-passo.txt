@@ -75,6 +75,8 @@
 		5.2.4 - Adicionado som de boom pro boss
 		5.2.5 - Adicionado som de tapa pro boss
 	
+6 - Upgrades
+	6.1 - Criando variaveis globais
 	
 	
 	

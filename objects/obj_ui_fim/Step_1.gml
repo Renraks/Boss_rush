@@ -1,14 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if temporizador <= 0
+controle()
+
+seleciona()
+
+if escolhas_feitas
 {
-	reiniciar()
+	reiniciar()	
 }
-
-if temporizador > 0
-{
-	temporizador--
-}
-
-

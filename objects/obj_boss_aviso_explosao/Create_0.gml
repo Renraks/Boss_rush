@@ -1,7 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-controle();
+opacidade = 0.2
 
-seleciona();
+vida = 0
 
+escala_maxima = 10
+
+show_debug_message("criou")
