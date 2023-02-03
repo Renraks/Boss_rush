@@ -7,4 +7,4 @@ direction = point_direction(x, y, mouse_x, mouse_y)
 
 vida = 10
 
-dano = global.dano_ataque_corpo_a_corpo
+dano = 1

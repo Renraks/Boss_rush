@@ -80,8 +80,8 @@ function avancando()
 	if(dando_avanco)
 	{
 		para_avanco--; //Começa a diminuir a contagem para parar o avanço
-		var colisao_parede = !place_free(x + speed, y + speed);
-		if(colisao_parede) 
+		var _colisao_parede = !place_free(x + speed, y + speed);
+		if(_colisao_parede) 
 		{
 			speed = 0; // Diminui a velocidade conforme se aproxima do objeto
 			if(speed == 0) instance_create_layer(x, y, "Efeitos", obj_explosao_chefe);//Cria a explosão ao bater na parede
@@ -103,9 +103,9 @@ function atacando()
 	if(ataque) //Se estiver atacando
 	{
 		ataque = false
-		var posicao_ataque = posicao_player
-		var o_ataque = instance_create_layer(x, y, "Boss", obj_boss_ataque_cc) //Cria o ataque
-		o_ataque.direction = posicao_ataque //Aponta ele para o player
+		var _posicao_ataque = posicao_player
+		var _o_ataque = instance_create_layer(x, y, "Boss", obj_boss_ataque_cc) //Cria o ataque
+		_o_ataque.direction = _posicao_ataque //Aponta ele para o player
 		speed = 0 //Fica parado
 		alarm[0] = room_speed * tempo_parado //Começa o cooldown pra andar
 	}
@@ -114,17 +114,17 @@ function atacando()
 function recebe_dano(ataque_recebido)
 {
 	
-	var dano_final = ataque_recebido.dano //Cria a variavel de dano
+	var _dano_final = ataque_recebido.dano //Cria a variavel de dano
 	
 	//Verifica o estado do boss
 	switch (estado_atual)
 	{
 	case "NORMAL": 
-		vida -= dano_final; 
+		vida -= _dano_final; 
 	break;
 	//
 	case "ENFRAQUECIDO": 
-		vida -= dano_final * 3; 
+		vida -= _dano_final * 3; 
 	break;
 	}
 	//Destroi a instancia do ataque

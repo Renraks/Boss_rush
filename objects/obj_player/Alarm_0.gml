@@ -1,12 +1,12 @@
 /// @description Cooldown Dash
 
-if(velocidade > 3)
+if(velocidade_atual > velocidade_base)
 {
-	velocidade = 3;
-	alarm[0] = room_speed * 2; //Tempo de recarga do dash
+	velocidade_atual = velocidade_base;
+	alarm[0] = cooldown_dash; //Tempo de recarga do dash
 }
 else
 {
-	cd_dash = false;	
+	dash_em_cooldown = false;	
 }
 
