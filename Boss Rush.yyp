@@ -42,6 +42,7 @@
   "resources": [
     {"id":{"name":"spr_explosao","path":"sprites/spr_explosao/spr_explosao.yy",},"order":1,},
     {"id":{"name":"spr_boss_ataque_cc","path":"sprites/spr_boss_ataque_cc/spr_boss_ataque_cc.yy",},"order":4,},
+    {"id":{"name":"scr_p_cria_ataque_grid","path":"scripts/scr_p_cria_ataque_grid/scr_p_cria_ataque_grid.yy",},"order":0,},
     {"id":{"name":"spr_aviso_explosao","path":"sprites/spr_aviso_explosao/spr_aviso_explosao.yy",},"order":0,},
     {"id":{"name":"obj_explosao_chefe","path":"objects/obj_explosao_chefe/obj_explosao_chefe.yy",},"order":1,},
     {"id":{"name":"obj_ui_ingame","path":"objects/obj_ui_ingame/obj_ui_ingame.yy",},"order":2,},
@@ -71,6 +72,7 @@
     {"id":{"name":"obj_ui_fim","path":"objects/obj_ui_fim/obj_ui_fim.yy",},"order":1,},
     {"id":{"name":"f_texto","path":"fonts/f_texto/f_texto.yy",},"order":0,},
     {"id":{"name":"Fim","path":"rooms/Fim/Fim.yy",},"order":1,},
+    {"id":{"name":"scr_p_cria_habilidade_grid","path":"scripts/scr_p_cria_habilidade_grid/scr_p_cria_habilidade_grid.yy",},"order":0,},
     {"id":{"name":"snd_Gun_shoot","path":"sounds/snd_Gun_shoot/snd_Gun_shoot.yy",},"order":0,},
     {"id":{"name":"Feedback","path":"notes/Feedback/Feedback.yy",},"order":0,},
     {"id":{"name":"obj_parede_interna","path":"objects/obj_parede_interna/obj_parede_interna.yy",},"order":1,},
@@ -91,6 +93,7 @@
     {"id":{"name":"obj_ataque_1","path":"objects/obj_ataque_1/obj_ataque_1.yy",},"order":2,},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":0,},
     {"id":{"name":"snd_Let_s_gooooooooo","path":"sounds/snd_Let_s_gooooooooo/snd_Let_s_gooooooooo.yy",},"order":0,},
+    {"id":{"name":"scr_p_cria_dados_grid","path":"scripts/scr_p_cria_dados_grid/scr_p_cria_dados_grid.yy",},"order":0,},
     {"id":{"name":"spr_cursor_ui_menu","path":"sprites/spr_cursor_ui_menu/spr_cursor_ui_menu.yy",},"order":0,},
     {"id":{"name":"Tutorial","path":"rooms/Tutorial/Tutorial.yy",},"order":2,},
   ],

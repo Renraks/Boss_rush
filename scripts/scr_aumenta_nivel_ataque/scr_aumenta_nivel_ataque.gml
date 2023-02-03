@@ -4,15 +4,27 @@ function scr_aumenta_nivel_ataque(ataque){
 	if ataque == 0
 	{
 		//Ataque corpo a corpo
-		global.dano_ataque_corpo_a_corpo *= global.escala_dano_ataque_corpo_a_corpo
-		global.nivel_corpo_a_corpo += 1
-		global.experiencia_necessaria_upgrade_corpo_a_corpo *= 2
+		//Dano
+		global.grid_ataques_player[# e_ataques_player.corpo_a_corpo, e_atributos_ataques_player.dano] 
+		*= global.grid_ataques_player[# e_ataques_player.corpo_a_corpo, e_atributos_ataques_player.escala_de_dano]
+		//Nivel
+		global.grid_ataques_player[# e_ataques_player.corpo_a_corpo, e_atributos_ataques_player.nivel_atual] += 1
+		//Exp necessaria
+		global.grid_ataques_player[# e_ataques_player.corpo_a_corpo, e_atributos_ataques_player.experiencia_necessaria] *= 2
 	}
 	else if ataque == 1
 	{
 		//Ataque a distancia//Ataque corpo a corpo
-		global.dano_ataque_a_distancia *= global.escala_dano_ataque_a_distancia
-		global.nivel_a_distancia += 1
-		global.experiencia_necessaria_upgrade_a_distancia *= 3
+		//Dano
+		global.grid_ataques_player[# e_ataques_player.a_distancia, e_atributos_ataques_player.dano] 
+		*= global.grid_ataques_player[# e_ataques_player.a_distancia, e_atributos_ataques_player.escala_de_dano]
+		//Nivel
+		global.grid_ataques_player[# 
+		e_ataques_player.a_distancia, 
+		//Exp necessária
+		e_atributos_ataques_player.nivel_atual] += 1
+		global.grid_ataques_player[# 
+		e_ataques_player.a_distancia, 
+		e_atributos_ataques_player.experiencia_necessaria] *= 3
 	}
 }

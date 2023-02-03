@@ -2,12 +2,12 @@
 // You can write your code in this editor
 
 //Se o dash estiver em cooldown
-if jogador.cd_dash
+if jogador.dash_em_cooldown
 {
 	if alpha_dash >= 1
 	{
 		alpha_dash = 0.1
-		cooldown_dash = 2
+		cooldown_dash = jogador.cooldown_dash
 	}
 	alpha_dash = lerp(alpha_dash, 1, 0.01)
 	contador_dash--
@@ -23,12 +23,12 @@ else
 	if contador_dash < room_speed contador_dash = room_speed
 }
 
-if jogador.cd_tiro
+if jogador.ataque_ad_em_cooldown
 {
 	if alpha_tiro >= 1
 	{
 		alpha_tiro = .1
-		cooldown_tiro = jogador.cooldown_tiro / 60
+		cooldown_ataque_ad = jogador.cooldown_tiro / 60
 	}
 	alpha_tiro = lerp(alpha_tiro, 1, 0.005)
 	contador_tiro--

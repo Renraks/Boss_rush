@@ -1,20 +1,21 @@
 /// @description Mobilidade e ações
 
 // --------- MOVIMENTO ------------ //
-movimento();
+f_movimento();
 
 // ----------- ATAQUES --------------//
-ataca();
-
-atira();
+//Corpo a corpo
+f_ataca();
+//A distancia
+f_atira();
 
 // ---------- HABILIDADES ------------//
-corrida();
+f_corrida();
 
 // ---------- STATUS ------------//
-danificado();
+f_danificado();
 
-if(vida <= 0)
+if(vida_atual <= 0)
 {
 	global.abates_consecutivos = 0
 	scr_salva_contagem_abates()
