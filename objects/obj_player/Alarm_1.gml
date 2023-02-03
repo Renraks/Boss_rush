@@ -1,8 +1,8 @@
-/// @description Cooldown Ataque 1
+/// @description Cooldown Ataque CAC (Corpo a Corpo)
 
-if cd_ataque
+if ataque_cac_em_cooldown
 {
-	cd_ataque = false	
+	ataque_cac_em_cooldown = false	
 }
 
 

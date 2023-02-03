@@ -1,29 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-//DEBUGGING
-//Instanciando as variaveis globais
-global.dano_ataque_corpo_a_corpo = 0 //Dano do ataque corpo a corpo do player
-global.dano_ataque_a_distancia = 0 //Dano do ataque a distancia do player
-
-//Recuperando dados salvos
-ini_open("savedata.ini")
-//Dados do jogo
-//ABATES
-global.abates = ini_read_real("Abates", "abates", 0)
-global.abates_consecutivos =  ini_read_real("Abates", "abates_consecutivos", 0)
-global.dificuldade = ini_read_real("Abates", "abates_consecutivos", 0) + 1 //Recupera a dificuldade da ultima vez que o player jogou
-//Dados do Player
-//NIVEIS
-global.nivel_corpo_a_corpo = ini_read_real("Player", "nivel_corpo_a_corpo", 1) //Nivel do ataque corpo a corpo
-global.nivel_a_distancia = ini_read_real("Player", "nivel_a_distancia", 1) //Nivel do ataque a distancia
-global.escala_dano_ataque_corpo_a_corpo = (0.1 * global.nivel_corpo_a_corpo) //Escala de dano do ataque a corpo-a-corpo do player
-global.escala_dano_ataque_a_distancia = (0.3 * global.nivel_a_distancia) //Escala do ataque a distancia do player
-global.experiencia = ini_read_real("Player", "experiencia", 0)
-ini_close()
-
-//DEBUGGIN
-
 //Variaveis gerais
 escolhas_feitas = false
 opacidade_enter = 0
@@ -39,11 +16,17 @@ texto_experiencia_atual = "Sua experiencia atual é: " + string(global.experienc
 posicao_cursor = 1
 textos_upgrade_basico = [
 "UPGRADES COMUNS", 
-"Melhorar ataque corpo-a-corpo/exp: " + string(global.experiencia_necessaria_upgrade_corpo_a_corpo), 
-"Melhorar ataque a distancia/exp: " + string(global.experiencia_necessaria_upgrade_a_distancia), 
+"Melhorar ataque corpo-a-corpo/exp: " + string(global.grid_ataques_player[# e_ataques_player.corpo_a_corpo, e_atributos_ataques_player.experiencia_necessaria]), 
+"Melhorar ataque a distancia/exp: " + string(global.grid_ataques_player[# e_ataques_player.a_distancia, e_atributos_ataques_player.experiencia_necessaria]), 
 "Melhorar Habilidade",
-"Pular"]
-textos_upgrade_habilidade = ["UPGRADES DE HABILIDADE", "EM DESENVOLVIMENTO", "EM DESENVOLVIMENTO", "Voltar"]
+"Pular"
+]
+textos_upgrade_habilidade = [
+"UPGRADES DE HABILIDADE",
+"EM DESENVOLVIMENTO", 
+"EM DESENVOLVIMENTO", 
+"Voltar"
+]
 
 //Tela atual
 telas = ["UPGRADE_BASICO", "UPGRADE_HABILIDADE"]
@@ -52,15 +35,14 @@ tela = "UPGRADE_BASICO"
 //Verifica quais upgrades podem ser escolhidos
 pode_upar_corpo_a_corpo = false
 pode_upar_a_distancia = false
-if global.experiencia >= global.experiencia_necessaria_upgrade_corpo_a_corpo
+if global.experiencia >= global.grid_ataques_player[# e_ataques_player.corpo_a_corpo, e_atributos_ataques_player.experiencia_necessaria]
 {
 	pode_upar_corpo_a_corpo = true
 }
-if global.experiencia >= global.experiencia_necessaria_upgrade_a_distancia
+if global.experiencia >= global.grid_ataques_player[# e_ataques_player.a_distancia, e_atributos_ataques_player.experiencia_necessaria]
 {
 	pode_upar_a_distancia = true
 }
-
 
 function reiniciar()
 {
@@ -76,9 +58,9 @@ function reiniciar()
 function controle()
 {
 	//Controle de cima e baixo
-	var up, down
-	up = keyboard_check_pressed(ord("W")) + keyboard_check_pressed(vk_up)
-	down = keyboard_check_pressed(ord("S")) + keyboard_check_pressed(vk_down)
+	var _up, _down
+	_up = keyboard_check_pressed(ord("W")) + keyboard_check_pressed(vk_up)
+	_down = keyboard_check_pressed(ord("S")) + keyboard_check_pressed(vk_down)
 	
 	//Escolhe o texto atual
 	var _texto_tela_atual
@@ -92,7 +74,7 @@ function controle()
 				_texto_tela_atual = textos_upgrade_habilidade
 			break;
 		}
-	if down
+	if _down
 	{
 		posicao_cursor++
 		
@@ -102,7 +84,7 @@ function controle()
 				}
 	}
 	
-	if up
+	if _up
 	{
 		posicao_cursor--
 		if posicao_cursor == 0
