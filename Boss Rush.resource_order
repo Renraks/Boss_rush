@@ -24,6 +24,7 @@
   "ResourceOrderSettings": [
     {"name":"spr_explosao","order":1,"path":"sprites/spr_explosao/spr_explosao.yy",},
     {"name":"spr_boss_ataque_cc","order":4,"path":"sprites/spr_boss_ataque_cc/spr_boss_ataque_cc.yy",},
+    {"name":"scr_p_cria_ataque_grid","order":4,"path":"scripts/scr_p_cria_ataque_grid/scr_p_cria_ataque_grid.yy",},
     {"name":"spr_aviso_explosao","order":6,"path":"sprites/spr_aviso_explosao/spr_aviso_explosao.yy",},
     {"name":"obj_explosao_chefe","order":1,"path":"objects/obj_explosao_chefe/obj_explosao_chefe.yy",},
     {"name":"obj_ui_ingame","order":2,"path":"objects/obj_ui_ingame/obj_ui_ingame.yy",},
@@ -48,6 +49,7 @@
     {"name":"spr_aviso_ataque","order":5,"path":"sprites/spr_aviso_ataque/spr_aviso_ataque.yy",},
     {"name":"obj_ui_fim","order":1,"path":"objects/obj_ui_fim/obj_ui_fim.yy",},
     {"name":"Fim","order":1,"path":"rooms/Fim/Fim.yy",},
+    {"name":"scr_p_cria_habilidade_grid","order":5,"path":"scripts/scr_p_cria_habilidade_grid/scr_p_cria_habilidade_grid.yy",},
     {"name":"snd_Gun_shoot","order":4,"path":"sounds/snd_Gun_shoot/snd_Gun_shoot.yy",},
     {"name":"Feedback","order":1,"path":"notes/Feedback/Feedback.yy",},
     {"name":"obj_parede_interna","order":1,"path":"objects/obj_parede_interna/obj_parede_interna.yy",},
@@ -61,6 +63,7 @@
     {"name":"spr_tiro1_player","order":1,"path":"sprites/spr_tiro1_player/spr_tiro1_player.yy",},
     {"name":"obj_ataque_1","order":2,"path":"objects/obj_ataque_1/obj_ataque_1.yy",},
     {"name":"snd_Let_s_gooooooooo","order":6,"path":"sounds/snd_Let_s_gooooooooo/snd_Let_s_gooooooooo.yy",},
+    {"name":"scr_p_cria_dados_grid","order":6,"path":"scripts/scr_p_cria_dados_grid/scr_p_cria_dados_grid.yy",},
     {"name":"Tutorial","order":2,"path":"rooms/Tutorial/Tutorial.yy",},
   ],
 }
