@@ -1,9 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-opacidade = 0.2
+valor = 0
 
-vida = 0
-vida_max = 0
+//Um segundo e meio até ser destruido
+vida = room_speed
 
-escala_maxima = 10

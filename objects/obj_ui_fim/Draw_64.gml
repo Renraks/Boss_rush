@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-draw_set_font(f_texto)
+draw_set_font(fnt_texto)
 draw_set_color(c_white)
 
 var xx_exp, yy_exp
@@ -33,11 +33,11 @@ if !escolhas_feitas
 	switch(tela)
 	{
 		case telas[0]: //UPGRADE BASICO
-			scr_escreve_array(textos_upgrade_basico, 3, 3,,,50,, f_titulo)
+			scr_escreve_array(textos_upgrade_basico, 3, 3,,,50,, fnt_titulo)
 		break;
 		
 		case telas[1]: //UPGRADE HABILIDADE
-			scr_escreve_array(textos_upgrade_habilidade, 3, 3,,,50,, f_titulo)
+			scr_escreve_array(textos_upgrade_habilidade, 3, 3,,,50,, fnt_titulo)
 		break;
 	}
 }

@@ -3,9 +3,9 @@ Gabriel
 >Pause, botão a definir
 >Auto-pause ao sair da tela do jogo
 >Recompensar gameplay agressiva
->Upgrade dependendo da quantidade de vidas que terminou ao derrotar o Boss
+>Upgrade dependendo da quantidade de vidas que terminou ao derrotar o Boss (Feito de forma diferente)
 ---->Upgrade com experiencia
->Loop do mesmo boss com menos cooldown, mais vida e novos ataques (Parcialmente feito)
+>Loop do mesmo boss com menos cooldown, mais vida e novos ataques (Feito)
 >Contador de kills (Criado!)
 
 

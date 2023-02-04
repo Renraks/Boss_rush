@@ -18,8 +18,8 @@ if(anda)
 		}
 		
 		case dificuldades[2]:
-			_probabilidade_explosao = 12
-			if global.dificuldade >= 10 _probabilidade_explosao = 10
+			_probabilidade_explosao = 16
+			if global.dificuldade >= 10 _probabilidade_explosao = 14
 		break;
 	}
 	
@@ -33,7 +33,7 @@ if(anda)
 		{
 			cria_aviso_explosao = true
 			comeca_explosao = true
-			alarm[1] = room_speed * 5 //Temporizador da explosão
+			alarm[1] = temporizador_explosao //Temporizador da explosão
 		}
 	}
 	if !comeca_explosao

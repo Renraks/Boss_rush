@@ -8,3 +8,5 @@ direction = random(359)
 vida = 1
 
 dano = 1
+
+acertou = false

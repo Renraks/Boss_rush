@@ -1,5 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Variaveis
 
 jogador = global.player_index
 

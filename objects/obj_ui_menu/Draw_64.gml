@@ -5,7 +5,7 @@ var xx, yy
 xx = room_width/2 - 100
 yy = room_height/2
 
-draw_set_font(f_menu)
+draw_set_font(fnt_menu)
 draw_set_alpha(1)
 
 draw_set_color(c_red)

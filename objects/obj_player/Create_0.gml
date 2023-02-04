@@ -1,4 +1,6 @@
 /// @description Variaveis de criação
+//Salva os dados assim que começar o jogo
+scr_salva_infos_player()
 
 // ------------- Variaveis básicas -------------- //
 velocidade_base = global.grid_dados_player[# e_dados_player.velocidade, e_atributos_dados_player.valor]
@@ -24,7 +26,7 @@ cooldown_dash = global.grid_habilidades_player[# e_habilidades_player.dash, e_at
 global.player_index = object_index
 
 //Métodos
-
+show_debug_message(cooldown_ataque_ad)
 // ------- Movimento ----------//
 function f_movimento(){
 	//Variaveis de movimentação
@@ -36,8 +38,8 @@ function f_movimento(){
 	
 	//Verificando se está livre e andando
 	speed = 0;
-	if(place_free(x, y +(_down - _up)* velocidade)) y += (_down - _up) * velocidade;
-	if(place_free(x + (_right - _left) * velocidade, y)) x += (_right - _left) * velocidade;
+	if(place_free(x, y +(_down - _up)* velocidade_atual)) y += (_down - _up) * velocidade_atual;
+	if(place_free(x + (_right - _left) * velocidade_atual, y)) x += (_right - _left) * velocidade_atual;
 }
 
 // -------- Atirando ----------//
@@ -74,7 +76,7 @@ function f_corrida()
 	if(_ativar_dash and !dash_em_cooldown)
 	{
 		velocidade_atual *= 6; //Velocidade do dash
-		alarm[0] = global.grid_habilidades_player[# e_habilidades_player, e_atributos_habilidades_player.duracao]; //Duração do dash
+		alarm[0] = global.grid_habilidades_player[# e_habilidades_player.dash, e_atributos_habilidades_player.duracao]; //Duração do dash
 		dash_em_cooldown = true;
 		audio_play_sound(snd_Slide, 1, false)
 	}	
@@ -89,10 +91,17 @@ function f_danificado()
 	var chefe = instance_place(x, y, obj_boss)
 	if(chefe and !ivulneravel)
 	{
-		if !chefe.dando_avanco vida--;
-		else vida_atual -= 2
-		tempo_ivulneravel = room_speed * 3;
-		ivulneravel = true;
+		if !chefe.dando_avanco 
+		{
+			//Não toma mais dano por toque;
+			//Caso queira implementar algo com toque futuramente, fazer aqui
+		}
+		else 
+		{
+			vida_atual -= 2
+			tempo_ivulneravel = room_speed * 3;
+			ivulneravel = true;
+		}
 	}
 	//Se receber um ataque do chefe, toma mais dano ainda
 	if place_meeting(x, y, obj_boss_ataque_cc) and !ivulneravel

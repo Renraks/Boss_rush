@@ -8,11 +8,14 @@ switch(estado_atual)
 {
 	case "NORMAL":
 		opacidade_enfraquecido = 1
+		image_speed = 0
+		image_index = 0
 	break;
 	
 	case "ENFRAQUECIDO":
 		opacidade_enfraquecido = lerp(opacidade_enfraquecido, 0, 0.015)
 		draw_sprite_ext(spr_efeito_enfraquecido, 0, x, y, 3, 2, 0, c_white, opacidade_enfraquecido)
+		image_speed = 1
 	break;
 }
 //Cria os objetos de buildup
@@ -52,20 +55,21 @@ if cria_aviso_explosao
 {
 	cria_aviso_explosao = false
 	var _aviso = instance_create_layer(x, y, "Efeitos", obj_boss_aviso_explosao)
-	_aviso.vida = room_speed * 5
+	_aviso.vida		= temporizador_explosao
+	_aviso.vida_max = temporizador_explosao
 }
 
-//Barras de vida
-draw_text(15, 15, vida)
+//Barras de vida_atual
 var life_xx1 = (room_width / 20) * 2
 var life_xx2 = (room_width / 20) * 18
 var life_yy1 = (room_height / 20) * 18
 var life_yy2 = (room_height / 20) * 19
-var life_xx2_atual = life_xx1 + (((room_width / 20) * 16) * ((vida/vida_max)) )
+var life_xx2_atual = life_xx1 + (((room_width / 20) * 16) * ((vida_atual/vida_max)) )
 draw_rectangle_color(life_xx1, life_yy1, life_xx2, life_yy2, c_red, c_red, c_red, c_red, false)
 draw_rectangle_color(life_xx1, life_yy1, life_xx2_atual, life_yy2, c_green, c_green, c_green, c_green, false)
 
 
 //DEBUGGING
+//draw_text(15, 15, vida_atual)
 //draw_circle_color(x, y, 800, c_white, c_blue, true) // Range maximo do avanço
 //draw_circle_color(x, y, 300, c_white, c_red, true) //Range do ataque basico

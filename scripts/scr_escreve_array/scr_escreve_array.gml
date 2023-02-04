@@ -5,7 +5,7 @@
 /// @param {real} multipl_room_width O multiplicador da largura da tela
 /// @param {real} multipl_room_height O multiplicador da altura da tela
 
-function scr_escreve_array(array, rw, rh, xn = 1, yn = 1, separacao = 30, fonte_1 = f_titulo, fonte_2 = f_texto){
+function scr_escreve_array(array, rw, rh, xn = 1, yn = 1, separacao = 30, fonte_1 = fnt_titulo, fonte_2 = fnt_texto){
 	var xx, yy
 	xx = room_width/rw * xn
 	yy = room_height/rh * yn

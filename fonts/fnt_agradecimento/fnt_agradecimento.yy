@@ -1,7 +1,7 @@
 {
   "resourceType": "GMFont",
   "resourceVersion": "1.0",
-  "name": "f_agradecimento",
+  "name": "fnt_agradecimento",
   "AntiAlias": 1,
   "applyKerning": 0,
   "ascender": 47,

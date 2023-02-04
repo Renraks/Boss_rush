@@ -28,14 +28,21 @@ textos_tbd =
 [
 "LISTA DE COISAS QUE PRETENDO FAZER",
 "Criar fases semi-randomicas",
-"Iniciar desenvolvimento do novo Chefe"
+"Iniciar desenvolvimento do novo Chefe",
+"Segunda habildade do player",
+"Sistema de escudo e quebra de escudo para o chefe quadrado"
 ]
 
 textos_att = 
 [
 "ATUALIZAÇÕES",
-"Adicionado ESPAÇO como opção além do ENTER",
-"Adicionado sistema de dificuldade",
+"Adicionado sistema de upgrade simples",
+"Adicionado loop de gameplay",
+"Adicionado novo ataque para o chefe em dificuldades maiores",
+"Nerfado cooldown do dash",
+"Adicionado dano causado ao acertar o chefe",
+"Removido dano por toque no chefe",
+"Buffado dano causado pelo chefe de outras formas"
 ]
 
 function controle()

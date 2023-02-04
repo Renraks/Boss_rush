@@ -9,8 +9,8 @@ opacidade_enter = 0
 audio_play_sound(snd_Sheeesh, 1, false)
 
 //Textos estaticos
-texto_experiencia_atual = "Sua experiencia atual é: " + string(global.experiencia)
-
+texto_experiencia_atual = "Sua experiencia atual é: " + string(global.grid_dados_player[# e_dados_player.experiencia, e_atributos_dados_player.valor])
+show_debug_message(global.grid_dados_player[# e_dados_player.experiencia, e_atributos_dados_player.valor])
 // ---------- VARIAVEIS DE UPGRADE ---------- //
 //Escolha de upgrade
 posicao_cursor = 1
@@ -35,11 +35,13 @@ tela = "UPGRADE_BASICO"
 //Verifica quais upgrades podem ser escolhidos
 pode_upar_corpo_a_corpo = false
 pode_upar_a_distancia = false
-if global.experiencia >= global.grid_ataques_player[# e_ataques_player.corpo_a_corpo, e_atributos_ataques_player.experiencia_necessaria]
+if global.grid_dados_player[# e_dados_player.experiencia, e_atributos_dados_player.valor]
+>= global.grid_ataques_player[# e_ataques_player.corpo_a_corpo, e_atributos_ataques_player.experiencia_necessaria]
 {
 	pode_upar_corpo_a_corpo = true
 }
-if global.experiencia >= global.grid_ataques_player[# e_ataques_player.a_distancia, e_atributos_ataques_player.experiencia_necessaria]
+if global.grid_dados_player[# e_dados_player.experiencia, e_atributos_dados_player.valor]
+>= global.grid_ataques_player[# e_ataques_player.a_distancia, e_atributos_ataques_player.experiencia_necessaria]
 {
 	pode_upar_a_distancia = true
 }

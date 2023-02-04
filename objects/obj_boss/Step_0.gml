@@ -2,29 +2,30 @@
 //Andando aleatoriamente de tempos em tempos
 
 // -------------- ESTADO ---------------- //
-checa_estado()
+f_checa_estado()
 
 // -------------- Andar ------------------ //
 
-andando();
+f_andando();
 
 // ---------------- Dash -------------------//
 
-avancando();
+f_avancando();
 
 // --------------- Ataque -----------------//
 
-atacando();
+f_atacando();
 
 // --------------- Explode ----------------- //
 
-explode();
+f_explode();
+f_verifica_stun() //Verifica se o jogador conseguiu atordoar o boss
 
 // --------------- Recebendo Dano ---------- //
 
 //Verifica ataques meelee
 var ataque_atual = instance_place(x, y, obj_ataque_1);
-if(place_meeting(x, y, ataque_atual)) recebe_dano(ataque_atual)
+if(place_meeting(x, y, ataque_atual)) f_recebe_dano(ataque_atual)
 //Veririca ataques de tiro
 var tiro_atual = instance_place(x, y, obj_tiro1_player);
-if(place_meeting(x, y, tiro_atual)) recebe_dano(tiro_atual)
+if(place_meeting(x, y, tiro_atual)) f_recebe_dano(tiro_atual)

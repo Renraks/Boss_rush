@@ -1,6 +1,6 @@
 /// @description Cooldown Tiro
 
-if(cooldown_ataque_ad)
+if(ataque_ad_em_cooldown)
 {
-	cooldown_ataque_ad = false;	
+	ataque_ad_em_cooldown = false;	
 }

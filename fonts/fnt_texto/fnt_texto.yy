@@ -1,7 +1,7 @@
 {
   "resourceType": "GMFont",
   "resourceVersion": "1.0",
-  "name": "f_texto",
+  "name": "fnt_texto",
   "AntiAlias": 1,
   "applyKerning": 0,
   "ascender": 17,

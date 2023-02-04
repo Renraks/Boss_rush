@@ -24,13 +24,16 @@ comeca_ataque = false
 
 //Explosao
 cria_aviso_explosao = false
+temporizador_explosao = room_speed *  5
 explodiu = false //Variavel que verifica se o chefe explodiu ou não
 comeca_explosao = false
+vida_atual_explosao = 0
 
 posicao_player = 0
 
 // Estados
 estado_atual = "NORMAL"; //State-machine
+estados = ["NORMAL", "ENFRAQUECIDO"]
 dificuldades = ["FACIL", "DIFICIL", "O_FIM"]
 dificuldade_atual = dificuldades[0]
 
@@ -38,7 +41,9 @@ dificuldade_atual = dificuldades[0]
 vida_base = 150
 vida_escala = 50
 vida_max = vida_base + (global.dificuldade * vida_escala); //Vida maxima do chefe
-vida = 1;    //Vida atual do chefe
+vida_atual = vida_max;    //Vida atual do chefe
+//DEBUG
+//vida_atual = 50;    //Vida atual do chefe
 
 //Lerps
 opacidade_enfraquecido = 1
@@ -49,7 +54,7 @@ alarm[0] = room_speed *2;
 //-------------------- Scripts ---------------------//
 
 // Andar //
-function andando()
+function f_andando()
 {
 	if(anda)
 	{
@@ -72,10 +77,11 @@ function andando()
 			else y++
 		}
 	}
+	image_angle = direction
 }
 
 // Avanço //
-function avancando()
+function f_avancando()
 {
 	if(dando_avanco)
 	{
@@ -85,7 +91,7 @@ function avancando()
 		{
 			speed = 0; // Diminui a velocidade conforme se aproxima do objeto
 			if(speed == 0) instance_create_layer(x, y, "Efeitos", obj_explosao_chefe);//Cria a explosão ao bater na parede
-			estado_atual = "ENFRAQUECIDO";
+			estado_atual = estados[1];
 			if !audio_is_playing(snd_Vine_Boom) audio_play_sound(snd_Vine_Boom, 1, false)
 		}
 		if(para_avanco <= 0)
@@ -98,7 +104,7 @@ function avancando()
 }
 
 //Ataque
-function atacando()
+function f_atacando()
 {
 	if(ataque) //Se estiver atacando
 	{
@@ -111,37 +117,39 @@ function atacando()
 	}
 }
 // Recebendo dano
-function recebe_dano(ataque_recebido)
+function f_recebe_dano(ataque_recebido)
 {
 	
-	var _dano_final = ataque_recebido.dano //Cria a variavel de dano
 	
 	//Verifica o estado do boss
 	switch (estado_atual)
 	{
-	case "NORMAL": 
-		vida -= _dano_final; 
+	case estados[0]: //Normal
+		vida_atual -= ataque_recebido.dano; 
 	break;
 	//
-	case "ENFRAQUECIDO": 
-		vida -= _dano_final * 3; 
+	case estados[1]: //Enfraquecido
+		ataque_recebido.dano *= 3 //Aumenta o dano no objeto original
+		var _dano_recebido_enquanto_enfraquecido = ataque_recebido.dano
+		vida_atual -= _dano_recebido_enquanto_enfraquecido
 	break;
 	}
 	//Destroi a instancia do ataque
+	ataque_recebido.acertou = true
 	instance_destroy(ataque_recebido);
-	if(vida <= 0) 
+	if(vida_atual <= 0) 
 	{
 		instance_destroy();
 		global.abates += 1; //Adiciona 1 a contagem de abates
 		global.abates_consecutivos += 1;
-		global.experiencia += 7 * global.dificuldade
+		global.grid_dados_player[# e_dados_player.experiencia, e_atributos_dados_player.valor] += 7 * global.dificuldade
 		scr_salva_contagem_abates()
 		scr_salva_infos_player()
 		room_goto_next()
 	}
 }
 
-function explode()
+function f_explode()
 {
 	if explodiu
 	{
@@ -157,10 +165,34 @@ function explode()
 	}
 }
 
-function checa_estado()
+function f_verifica_stun()
 {
-	if vida <= (vida_max / 3) * 2 dificuldade_atual = dificuldades[1]
-	else if vida <= vida_max/3 dificuldade_atual = dificuldades[2]
+	if comeca_explosao
+	{
+		if vida_atual_explosao == 0
+		{
+			vida_atual_explosao = vida_atual //Grava a vida_atual
+		}
+		
+		//Se o jogador conseguir causar 10% da vida maxima em dano, atordoa o chefe
+		if vida_atual <= vida_atual_explosao - (vida_max/10)
+		{
+			//Para a explosão
+			comeca_explosao = false
+			//Atordoa o chefe por 4 segundos (3 + 1 do alarm[1])
+			alarm[1] = room_speed * 3
+			estado_atual = estados[1]
+			//Destroi o aviso de explosao
+			var _aviso_explosao = instance_place(x, y, obj_boss_aviso_explosao)
+			instance_destroy(_aviso_explosao)
+		}
+	}
+}
+
+function f_checa_estado()
+{
+	if vida_atual <= (vida_max / 3) * 2 dificuldade_atual = dificuldades[1]
+	else if vida_atual <= vida_max/3 dificuldade_atual = dificuldades[2]
 	//Verifica o estado atual, e muda as variaveis conforme ele
 	switch(dificuldade_atual)
 	{
