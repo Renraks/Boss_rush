@@ -40,6 +40,7 @@
     {"name":"spr_ataque_1","order":2,"path":"sprites/spr_ataque_1/spr_ataque_1.yy",},
     {"name":"obj_boss_aviso_explosao","order":5,"path":"objects/obj_boss_aviso_explosao/obj_boss_aviso_explosao.yy",},
     {"name":"obj_parede_particula","order":2,"path":"objects/obj_parede_particula/obj_parede_particula.yy",},
+    {"name":"scr_atualiza_dano_ataques","order":7,"path":"scripts/scr_atualiza_dano_ataques/scr_atualiza_dano_ataques.yy",},
     {"name":"spr_parede_particula","order":1,"path":"sprites/spr_parede_particula/spr_parede_particula.yy",},
     {"name":"obj_global","order":5,"path":"objects/obj_global/obj_global.yy",},
     {"name":"snd_Sheeesh","order":5,"path":"sounds/snd_Sheeesh/snd_Sheeesh.yy",},
@@ -66,6 +67,6 @@
     {"name":"obj_texto_dano","order":3,"path":"objects/obj_texto_dano/obj_texto_dano.yy",},
     {"name":"scr_p_cria_dados_grid","order":6,"path":"scripts/scr_p_cria_dados_grid/scr_p_cria_dados_grid.yy",},
     {"name":"fnt_dano","order":4,"path":"fonts/fnt_dano/fnt_dano.yy",},
-    {"name":"Tutorial","order":2,"path":"rooms/Tutorial/Tutorial.yy",},
+    {"name":"Quadrado","order":2,"path":"rooms/Quadrado/Quadrado.yy",},
   ],
 }

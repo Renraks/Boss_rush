@@ -1,0 +1,95 @@
+Patch notes:
+ 
+ // 0.1.0.0 // 27/01/2023
+ -- Versão inicial --
+ Primeira versão do jogo, o player possui um ataque a distancia e um corpo a corpo
+ O chefe possui um ataque de avanço
+ Caso o chefe acerte uma parede com o avanço, ele causa uma pequena explosão
+ Também se acertar a parede, ele se torna enfraquecido, recebendo dano aumentado
+ A explosão destroi paredes internas do mapa
+ Ao terminar o jogador pode reiniciar o jogo
+ Dados do chefe
+ Vida: 300
+ Dano do avanço: 1
+ Dano por toque: 1
+ 
+ Dados do player
+ vida: 5
+ dano base ataque corpo a corpo: 4
+ dano base a distancia: 10 
+ 
+ 
+ // 0.2.0.0 // 28/01/2023
+ -- Atualização de UI --
+ Adicionado UI de vida do player e do Chefe 
+ Aumento da dificuldade conforme a vida do chefe diminui
+ Adicionado aviso ao ataque do chefe
+ Adicionado um novo ataque e IA ao Boss 
+ 
+ Balanceamento
+ Chefe
+ Vida: 300 -> 200
+ 
+ // 0.2.1.0 // 29/01/2023
+ -- UI dos ataques -- 
+ Adicionado uma UI para avisar o tempo de recarga dos ataques do player 
+ 
+ // 0.2.2.0 // 31/01/2023 
+ -- Sons e design da fase --
+ Adicionado sons a todas as telas do jogo
+ Atualizada a UI do player
+ Melhorado design da fase
+ Corrigido um bug em que a UI da vida do chefe podia ficar negativa
+ 
+ // 0.2.3.0 // Contagem de vitorias 31/01/2023
+ Adicionado uma contagem de vitorias totais
+ Adicionado uma contagem de vitorias consecutivas
+ 
+ Balanceamento
+ Chefe
+ Vida: 200 -> 150
+ 
+ Player
+ Dano Corpo-a-Corpo: 4 -> 2
+ Dano a Distancia: 10 -> 4
+ 
+ // 0.3.0.0 // 04/02/2023 
+ -- Gameplay Loop --
+ Adicionado sistema de dificuldade de fase
+ - Quanto mais abates consecutivos o jogador tiver, mais vida o chefe terá
+ - Em dificuldades maiores o Chefe pode agir de formas diferentes
+ Adicionado sistema de Upgrade aos ataques basicos do player
+ O jogador pode gastar experiencia ganhada ao derrotar chefes para melhorar permanentemente os ataques
+ - Ataque corpo a corpo: Aumento de dano em cada nivel
+ - Ataque a distancia: Aumento de dano em cada nivel
+ Adicionado novo ataque ao Chefe em dificuldades de fase maiores
+ - O ataque novo mantem o chefe estatico e cresce uma grande area que causará dano
+ - Se o jogador der dano o suficiente no chefe durante a duração de canalização, o boss é atordoado e se torna enfraquecido
+ - Tempo de canalização: 5s
+ - Dano causado pela explosão: 4
+ - Tempo de atordoamente e enfraquecimento: 4s
+ Balancemanto
+ Player
+ Nerfado Dash
+ - Tempo de recarga: 2s -> 4s
+ 
+ Chefe Quadrado
+ Dano por toque: 1 -> 0
+ Dano por dash: 1 -> 2
+ Dano por explosão: 1 -> 2
+ 
+ // 0.3.1.0 // 08/02/2023
+ -- Balanceamento da dificuldade, ajuste de calculo de dano e Patch notes --
+ Adicionado este arquivo de patch notes aos arquivos do winrar
+ Calculo de dano agora é feito na hora do ataque ao invés de ficar salvo no savefile
+ Chefe agora causa mais dano quanto maior a dificuldde, mas tem menos vida base e aumento de vida por dificuldade
+ 
+ Balanceamento 
+ Chefe
+ - Aumento de dano por dificuldade: 0 em todos os niveis -> 1 a cada cinco niveis de dificuldade
+ - Vida base: 150 -> 100
+ - Escala por dificuldade: 50/nivel -> 25/nivel
+ Nerfado o dano base dos ataques do chefe para compensar o aumento de dano que ele recebe por dificuldade
+ - Dano do soco: 2 -> 1
+ - Dano do avanço e explosão: 2 -> 1
+ - Dano da explosão maior: 4 -> 3

@@ -48,8 +48,10 @@ function f_ataca()
 	var _ativar_ataque = mouse_button = mb_left
 	if (_ativar_ataque && !ataque_cac_em_cooldown)
 	{
+		var _index_ataque = e_ataques_player.corpo_a_corpo
+		var _escala_ataque = global.grid_ataques_player[# e_ataques_player.corpo_a_corpo, e_atributos_ataques_player.dano_base]
 		var _ataque = instance_create_layer(x, y, "Ataque", obj_ataque_1)
-		_ataque.dano = global.grid_ataques_player[# e_ataques_player.corpo_a_corpo, e_atributos_ataques_player.dano]
+		_ataque.dano = scr_atualiza_dano_ataques(_index_ataque, _escala_ataque)
 		alarm[1] = cooldown_ataque_cac
 		ataque_cac_em_cooldown = true;
 		audio_play_sound(snd_Punch, 1, false)
@@ -61,8 +63,10 @@ function f_atira()
 	var _ativar_tiro = mouse_button = mb_right;
 	if(_ativar_tiro && !ataque_ad_em_cooldown) 
 	{
+		var _index_ataque = e_ataques_player.a_distancia
+		var _escala_ataque = global.grid_ataques_player[# e_ataques_player.a_distancia, e_atributos_ataques_player.dano_base]
 		var _tiro = instance_create_layer(x, y, "Tiros", obj_tiro1_player);
-		_tiro.dano = global.grid_ataques_player[# e_ataques_player.a_distancia, e_atributos_ataques_player.dano]
+		_tiro.dano = scr_atualiza_dano_ataques(_index_ataque, _escala_ataque)
 		alarm[2] = cooldown_ataque_ad
 		ataque_ad_em_cooldown = true;
 		audio_play_sound(snd_Gun_shoot, 1, false)
@@ -98,7 +102,7 @@ function f_danificado()
 		}
 		else 
 		{
-			vida_atual -= 2
+			vida_atual -= chefe.dano_avanco
 			tempo_ivulneravel = room_speed * 3;
 			ivulneravel = true;
 		}

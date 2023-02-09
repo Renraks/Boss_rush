@@ -7,9 +7,6 @@ function scr_aumenta_nivel_ataque(ataque){
 		//Paga a exp
 		global.grid_dados_player[# e_dados_player.experiencia, e_atributos_dados_player.valor]
 		-= global.grid_ataques_player[# e_ataques_player.corpo_a_corpo, e_atributos_ataques_player.experiencia_necessaria]
-		//Dano
-		global.grid_ataques_player[# e_ataques_player.corpo_a_corpo, e_atributos_ataques_player.dano] 
-		*= global.grid_ataques_player[# e_ataques_player.corpo_a_corpo, e_atributos_ataques_player.escala_de_dano]
 		//Nivel
 		global.grid_ataques_player[# e_ataques_player.corpo_a_corpo, e_atributos_ataques_player.nivel_atual] += 1
 		//Exp necessaria
@@ -21,9 +18,6 @@ function scr_aumenta_nivel_ataque(ataque){
 		//Paga a exp
 		global.grid_dados_player[# e_dados_player.experiencia, e_atributos_dados_player.valor]
 		-= global.grid_ataques_player[# e_ataques_player.corpo_a_corpo, e_atributos_ataques_player.experiencia_necessaria]
-		//Dano
-		global.grid_ataques_player[# e_ataques_player.a_distancia, e_atributos_ataques_player.dano] 
-		*= global.grid_ataques_player[# e_ataques_player.a_distancia, e_atributos_ataques_player.escala_de_dano]
 		//Nivel
 		global.grid_ataques_player[# e_ataques_player.a_distancia, e_atributos_ataques_player.nivel_atual] += 1
 		//Exp necessária

@@ -15,6 +15,7 @@ dando_avanco = false; //Variavel que confirma ter iniciado o avanço
 buildup = false //Variavel de buildup do avanço
 cria_aviso_dash = false
 comeca_dash = false
+dano_avanco = 1 + (floor(global.dificuldade/5)) //Aumenta o dano em 1 a cada 5 de dificuldade
 
 //Verifica ataque
 ataque = false
@@ -38,8 +39,8 @@ dificuldades = ["FACIL", "DIFICIL", "O_FIM"]
 dificuldade_atual = dificuldades[0]
 
 //Vida
-vida_base = 150
-vida_escala = 50
+vida_base = 100
+vida_escala = 25
 vida_max = vida_base + (global.dificuldade * vida_escala); //Vida maxima do chefe
 vida_atual = vida_max;    //Vida atual do chefe
 //DEBUG
@@ -58,7 +59,6 @@ function f_andando()
 {
 	if(anda)
 	{
-		//if(place_free(x, y)) mp_potential_step(obj_player.x, obj_player.y, 2, 0);//Código antigo de seguir o player
 		if(!place_free(x, y)) speed *= -1; // Verifica se pode continuar, se não, inverte a direção
 		if(alarm[0] <= 0)
 		{
@@ -90,7 +90,11 @@ function f_avancando()
 		if(_colisao_parede) 
 		{
 			speed = 0; // Diminui a velocidade conforme se aproxima do objeto
-			if(speed == 0) instance_create_layer(x, y, "Efeitos", obj_explosao_chefe);//Cria a explosão ao bater na parede
+			if(speed == 0) //Para
+			{ 
+				var _explosao = instance_create_layer(x, y, "Efeitos", obj_explosao_chefe); //Cria a explosão ao bater na parede
+				_explosao = 1 + (floor(global.dificuldade/5)) //Aumenta o dano em 1 a cada 5 de dificuldade
+			}
 			estado_atual = estados[1];
 			if !audio_is_playing(snd_Vine_Boom) audio_play_sound(snd_Vine_Boom, 1, false)
 		}
@@ -158,7 +162,7 @@ function f_explode()
 		var _explosao = instance_create_layer(x, y, "Boss", obj_explosao_chefe)
 		_explosao.image_xscale = 10
 		_explosao.image_yscale = 10
-		_explosao.dano = 4
+		_explosao.dano = 3 + (floor(global.dificuldade/5)) //Aumenta o dano em 1 a cada 5 de dificuldade
 		
 		alarm[0] = room_speed * (tempo_parado * 2) //Volta a andar
 		if !audio_is_playing(snd_Vine_Boom) audio_play_sound(snd_Vine_Boom, 1, false)

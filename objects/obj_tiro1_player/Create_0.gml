@@ -6,6 +6,6 @@ hspeed = 10;
 
 direction = point_direction(x, y, mouse_x, mouse_y)
 
-dano = 10
+dano = 1
 
 vida = 100

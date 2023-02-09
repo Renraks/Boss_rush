@@ -59,6 +59,7 @@
     {"id":{"name":"spr_ataque_1","path":"sprites/spr_ataque_1/spr_ataque_1.yy",},"order":2,},
     {"id":{"name":"obj_boss_aviso_explosao","path":"objects/obj_boss_aviso_explosao/obj_boss_aviso_explosao.yy",},"order":0,},
     {"id":{"name":"obj_parede_particula","path":"objects/obj_parede_particula/obj_parede_particula.yy",},"order":2,},
+    {"id":{"name":"scr_atualiza_dano_ataques","path":"scripts/scr_atualiza_dano_ataques/scr_atualiza_dano_ataques.yy",},"order":0,},
     {"id":{"name":"spr_parede_particula","path":"sprites/spr_parede_particula/spr_parede_particula.yy",},"order":1,},
     {"id":{"name":"obj_global","path":"objects/obj_global/obj_global.yy",},"order":5,},
     {"id":{"name":"Menu","path":"rooms/Menu/Menu.yy",},"order":0,},
@@ -97,11 +98,11 @@
     {"id":{"name":"scr_p_cria_dados_grid","path":"scripts/scr_p_cria_dados_grid/scr_p_cria_dados_grid.yy",},"order":0,},
     {"id":{"name":"spr_cursor_ui_menu","path":"sprites/spr_cursor_ui_menu/spr_cursor_ui_menu.yy",},"order":0,},
     {"id":{"name":"fnt_dano","path":"fonts/fnt_dano/fnt_dano.yy",},"order":0,},
-    {"id":{"name":"Tutorial","path":"rooms/Tutorial/Tutorial.yy",},"order":2,},
+    {"id":{"name":"Quadrado","path":"rooms/Quadrado/Quadrado.yy",},"order":0,},
   ],
   "RoomOrderNodes": [
     {"roomId":{"name":"Menu","path":"rooms/Menu/Menu.yy",},},
-    {"roomId":{"name":"Tutorial","path":"rooms/Tutorial/Tutorial.yy",},},
+    {"roomId":{"name":"Quadrado","path":"rooms/Quadrado/Quadrado.yy",},},
     {"roomId":{"name":"Fim","path":"rooms/Fim/Fim.yy",},},
   ],
   "TextureGroups": [

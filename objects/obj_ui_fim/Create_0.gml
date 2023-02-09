@@ -80,7 +80,7 @@ function controle()
 	{
 		posicao_cursor++
 		
-		if posicao_cursor > array_length(textos_upgrade_basico) - 1
+		if posicao_cursor > array_length(_texto_tela_atual) - 1
 				{
 					posicao_cursor = 1
 				}
@@ -91,7 +91,7 @@ function controle()
 		posicao_cursor--
 		if posicao_cursor == 0
 		{
-			posicao_cursor = array_length(textos_upgrade_basico) - 1
+			posicao_cursor = array_length(_texto_tela_atual) - 1
 		}
 	}
 }

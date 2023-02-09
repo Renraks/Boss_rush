@@ -31,7 +31,7 @@ enum e_ataques_player
 enum e_atributos_ataques_player
 {
 	none,
-	dano, //Dano causado pelo ataque
+	dano_base, //Dano causado pelo ataque
 	nivel_atual, //Nivel atual do ataque
 	experiencia_necessaria, //Experiencia necessaria para subir o ataque de nivel
 	escala_de_dano, //Quanto o ataque vai aumentar o dano quando subir de nivel
