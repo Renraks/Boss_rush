@@ -1,6 +1,7 @@
 /// @description Variaveis
 
 jogador = global.player_index
+//jogador = noone
 
 alpha_dash = 1
 contador_dash = room_speed

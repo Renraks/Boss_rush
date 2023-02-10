@@ -1,4 +1,11 @@
 Patch notes:
+ **Se encontrar algum bug, ou tiver alguma sugestão, porfavor envie para renraksGAMING@hotmail.com**
+ -----------------------------------------AVISOS IMPORTANTES-----------------------------------------
+ Durante essa fase beta o savefile pode não ser mantido entre versões!!!
+ Encontrei algumas dificuldades no código de retroatividade de save e vou verificar como resolver isso
+ Assim que eu descobrir como resolver, deixarei avisado aqui e no patch da versão em que for resolvido
+ Peço desculpas pelos possiveis inconvenientes, e agradeço por jogarem meu joguinho!
+ -----------------------------------------------------------------------------------------------------
  
  // 0.1.0.0 // 27/01/2023
  -- Versão inicial --
@@ -93,3 +100,14 @@ Patch notes:
  - Dano do soco: 2 -> 1
  - Dano do avanço e explosão: 2 -> 1
  - Dano da explosão maior: 4 -> 3
+ 
+ // 0.3.2.0 // Mapa randomico e correção de bugs
+ --NOVIDADES--
+ Mapa aleatorio
+ - 4 Designs de mapa diferentes para o chefe quadrado
+ 
+ --BUGS--
+ Corrigido um bug em que o Chefe quadrado não podia ser atordoado durante a grande explosão
+ Corrigido um bug em que, caso o Chefe quadrado recebesse dano o suficiente para ser atordoado, o atordoamento só acontecia na explosão seguinte
+ Corrigido uma falha em que a mensagem de debug do calculo de dano foi deixada no código
+ Corrigido um bug em que, raramente, o Chefe quadrado ficava enternamente enfraquecido e parado

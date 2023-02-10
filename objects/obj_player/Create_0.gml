@@ -26,7 +26,6 @@ cooldown_dash = global.grid_habilidades_player[# e_habilidades_player.dash, e_at
 global.player_index = object_index
 
 //Métodos
-show_debug_message(cooldown_ataque_ad)
 // ------- Movimento ----------//
 function f_movimento(){
 	//Variaveis de movimentação
@@ -51,7 +50,7 @@ function f_ataca()
 		var _index_ataque = e_ataques_player.corpo_a_corpo
 		var _escala_ataque = global.grid_ataques_player[# e_ataques_player.corpo_a_corpo, e_atributos_ataques_player.dano_base]
 		var _ataque = instance_create_layer(x, y, "Ataque", obj_ataque_1)
-		_ataque.dano = scr_atualiza_dano_ataques(_index_ataque, _escala_ataque)
+		_ataque.dano = scr_calcula_dano_ataques(_index_ataque, _escala_ataque)
 		alarm[1] = cooldown_ataque_cac
 		ataque_cac_em_cooldown = true;
 		audio_play_sound(snd_Punch, 1, false)
@@ -66,7 +65,7 @@ function f_atira()
 		var _index_ataque = e_ataques_player.a_distancia
 		var _escala_ataque = global.grid_ataques_player[# e_ataques_player.a_distancia, e_atributos_ataques_player.dano_base]
 		var _tiro = instance_create_layer(x, y, "Tiros", obj_tiro1_player);
-		_tiro.dano = scr_atualiza_dano_ataques(_index_ataque, _escala_ataque)
+		_tiro.dano = scr_calcula_dano_ataques(_index_ataque, _escala_ataque)
 		alarm[2] = cooldown_ataque_ad
 		ataque_ad_em_cooldown = true;
 		audio_play_sound(snd_Gun_shoot, 1, false)

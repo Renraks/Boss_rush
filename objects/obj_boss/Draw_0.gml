@@ -60,14 +60,23 @@ if cria_aviso_explosao
 }
 
 //Barras de vida_atual
-var life_xx1 = (room_width / 20) * 2
-var life_xx2 = (room_width / 20) * 18
-var life_yy1 = (room_height / 20) * 18
-var life_yy2 = (room_height / 20) * 19
-var life_xx2_atual = life_xx1 + (((room_width / 20) * 16) * ((vida_atual/vida_max)) )
+var life_xx1, life_xx2, life_yy1, life_yy2, life_xx2_atual
+if global.player_index.y <= room_height/2
+{
+	life_yy1 = (room_height / 20) * 18
+	life_yy2 = (room_height/ 20) * 19
+	
+}
+else
+{	
+	life_yy1 = (room_height / 20)
+	life_yy2 = (room_height / 20) * 2
+}
+life_xx1 = (room_width / 15) * 3
+life_xx2 = (room_width / 15) * 12
+life_xx2_atual = life_xx1 + (((room_width / 15) * 9) * ((vida_atual/vida_max)) )
 draw_rectangle_color(life_xx1, life_yy1, life_xx2, life_yy2, c_red, c_red, c_red, c_red, false)
 draw_rectangle_color(life_xx1, life_yy1, life_xx2_atual, life_yy2, c_green, c_green, c_green, c_green, false)
-
 
 //DEBUGGING
 //draw_text(15, 15, vida_atual)

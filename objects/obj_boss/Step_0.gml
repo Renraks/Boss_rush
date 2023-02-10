@@ -19,7 +19,8 @@ f_atacando();
 // --------------- Explode ----------------- //
 
 f_explode();
-f_verifica_stun() //Verifica se o jogador conseguiu atordoar o boss
+f_verifica_atordoado() //Verifica se o jogador conseguiu atordoar o boss
+f_atordoado()
 
 // --------------- Recebendo Dano ---------- //
 

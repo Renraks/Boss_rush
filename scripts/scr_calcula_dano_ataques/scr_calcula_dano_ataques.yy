@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "scr_atualiza_dano_ataques",
+  "name": "scr_calcula_dano_ataques",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

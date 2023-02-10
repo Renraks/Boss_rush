@@ -26,7 +26,7 @@ else
 		ataque = true
 		audio_play_sound(snd_Slap, 1, false)
 	}
-	else if comeca_explosao
+	else if comeca_explosao and !atordoado
 	{
 		buildup = false
 		comeca_explosao = false
@@ -37,4 +37,9 @@ else
 		buildup = false; //Para a fumaça de buildup
 		alarm[0] = room_speed //Volta a andar em 1 segundo
 	}
+}
+
+if atordoado
+{
+	atordoado = false	
 }

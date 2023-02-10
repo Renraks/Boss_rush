@@ -29,6 +29,7 @@ temporizador_explosao = room_speed *  5
 explodiu = false //Variavel que verifica se o chefe explodiu ou não
 comeca_explosao = false
 vida_atual_explosao = 0
+atordoado = false
 
 posicao_player = 0
 
@@ -155,7 +156,7 @@ function f_recebe_dano(ataque_recebido)
 
 function f_explode()
 {
-	if explodiu
+	if explodiu and !atordoado
 	{
 		explodiu = false
 		
@@ -169,7 +170,7 @@ function f_explode()
 	}
 }
 
-function f_verifica_stun()
+function f_verifica_atordoado()
 {
 	if comeca_explosao
 	{
@@ -183,13 +184,26 @@ function f_verifica_stun()
 		{
 			//Para a explosão
 			comeca_explosao = false
-			//Atordoa o chefe por 4 segundos (3 + 1 do alarm[1])
-			alarm[1] = room_speed * 3
-			estado_atual = estados[1]
-			//Destroi o aviso de explosao
-			var _aviso_explosao = instance_place(x, y, obj_boss_aviso_explosao)
-			instance_destroy(_aviso_explosao)
+			//Atordoado se torna verdadeiro
+			atordoado = true
+			//Zera a contagem de vida da explosão
+			vida_atual_explosao = 0
 		}
+	}
+}
+
+function f_atordoado()
+{
+	if atordoado
+	{
+		//Mantem o chefe parado enquanto estiver atordoado
+		speed = 0
+		//Atordoa o chefe por 4 segundos (3 + 1 do alarm[1])
+		if alarm[1] <> room_speed * 3 alarm[1] = room_speed * 3
+		estado_atual = estados[1]
+		//Destroi o aviso de explosao
+		var _aviso_explosao = instance_place(x, y, obj_boss_aviso_explosao)
+		instance_destroy(_aviso_explosao)
 	}
 }
 
